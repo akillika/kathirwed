@@ -1,0 +1,194 @@
+/* Basic Reset */
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+/* Background Image */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('bg.jpg') no-repeat center center fixed;
+    background-size: cover;
+    z-index: -1; /* Place the background image behind all content */
+}
+
+/* Countdown Section */
+#countdown-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: #fff;
+    text-align: center;
+    padding: 2rem; /* Padding for mobile */
+}
+
+h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 6vw; /* Responsive font size */
+    margin-bottom: 0.5rem;
+    color: #2c1e1e;
+    animation: fadeIn 2s ease-in-out;
+}
+
+.wedding-date {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5vw; /* Responsive font size */
+    margin-bottom: 2rem;
+    color: #614747;
+    animation: fadeIn 2s ease-in-out 0.5s;
+}
+
+#countdown {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap; /* Wrap items on smaller screens */
+}
+
+.countdown-item {
+    position: relative;
+    width: 7vw; /* Width relative to viewport width */
+    padding-top: 7vw; /* Maintain square aspect ratio by using padding-top */
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    animation: fadeInUp 1s ease-in-out, pulse 2s infinite;
+    overflow: hidden; /* Ensure content doesn't overflow */
+}
+
+.countdown-inner {
+    position: absolute; /* Positioning absolute to align content inside the square */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Center content */
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.5vw; /* Responsive font size */
+    color: #333;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.countdown-label {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1vw; /* Responsive font size */
+    color: #333;
+    margin-top: 0.5rem;
+    font-weight: bold;
+}
+
+.footer {
+    display: inline-block;
+    margin-top: 2rem;
+    font-size: 2vw; /* Responsive size */
+    color: #331616;
+    text-decoration: none;
+    transition: opacity 0.3s ease;
+}
+
+/* Scroll Arrow */
+.scroll-link {
+    display: inline-block;
+    margin-top: 2rem;
+    font-size: 1vw; /* Responsive size */
+    color: #331616;
+    text-decoration: none;
+    transition: opacity 0.3s ease;
+}
+
+.scroll-link:hover {
+    opacity: 0.8;
+}
+
+/* Video Section */
+#video-section {
+    padding: 2rem;
+    text-align: center;
+     /* Slightly transparent background */
+    min-height: 100vh; /* Ensure it covers full viewport height */
+}
+
+/* Video Container */
+.video-container {
+    max-width: 100%;
+    margin: auto;
+}
+
+iframe {
+    width: 80%;
+    height: auto;
+    max-width: 100%;
+    aspect-ratio: 16 / 9; /* Maintain aspect ratio */
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 8vw; /* Adjust font size */
+    }
+
+    .wedding-date {
+        font-size: 2vw; /* Adjust font size */
+    }
+
+    .countdown-item {
+        width: 25vw; /* Adjust width */
+        padding-top: 25vw; /* Maintain square aspect ratio */
+    }
+
+    .countdown-inner {
+        font-size: 4vw; /* Adjust font size */
+    }
+
+    .countdown-label {
+        font-size: 2vw; /* Adjust font size */
+    }
+
+    .scroll-link {
+        font-size: 4vw; /* Adjust font size */
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 10vw; /* Adjust font size */
+    }
+
+    .wedding-date {
+        font-size: 3vw; /* Adjust font size */
+    }
+
+    .countdown-item {
+        width: 30vw; /* Adjust width */
+        padding-top: 30vw; /* Maintain square aspect ratio */
+    }
+
+    .countdown-inner {
+        font-size: 5vw; /* Adjust font size */
+    }
+
+    .countdown-label {
+        font-size: 3vw; /* Adjust font size */
+    }
+
+    .scroll-link {
+        font-size: 5vw; /* Adjust font size */
+    }
+}
